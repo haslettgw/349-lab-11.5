@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country &amp; Weather Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Country Facts & Weather</h1>
+    <p>Learn fun facts about countries and check their weather in the capital cities.</p>
+  </header>
+
+  <main>
+    <section class="search-section" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="visually-hidden">Search for a Country</h2>
+      <form id="search-form">
+        <label for="country-input">Search for a country:</label>
+        <div class="input-group">
+          <input type="text" id="country-input" name="country" placeholder="country name" required>
+          <button type="submit">Discover</button>
+        </div>
+      </form>
+      <p id="status-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="results-container" class="results-grid hidden" aria-label="Search Results">
+      <article class="card country-card">
+        <img id="country-flag" src="placeholder.jpeg" alt="Country flag">
+        <h2 id="country-name">Country Name</h2>
+        <ul>
+          <li><strong>Capital:</strong> <span id="country-capital"></span></li>
+          <li><strong>Region:</strong> <span id="country-region"></span></li>
+          <li><strong>Population:</strong> <span id="country-population"></span></li>
+          <li><strong>Languages:</strong> <span id="country-languages"></span></li>
+        </ul>
+      </article>
+
+      <article class="card weather-card">
+        <h2>Live Capital Weather</h2>
+        <p class="weather-location" id="weather-city"></p>
+        <div class="weather-display">
+          <span id="weather-temp" class="temp-large">--°C</span>
+          <span id="weather-desc">Loading...</span>
+        </div>
+        <ul>
+          <li><strong>Wind Speed:</strong> <span id="weather-wind"></span></li>
+          <li><strong>Coordinates:</strong> <span id="weather-coords"></span></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data provided by <a href="https://restcountries.com/">REST Countries API</a> &amp; <a href="https://open-meteo.com/">Open-Meteo API</a> &amp; <a href="https://www.mediawiki.org/wiki/Wikimedia_REST_API">Wikimedia REST API</a>.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
